@@ -58,6 +58,7 @@ int      rank = 0;
 int      rankOffset = 0;
 int      tasksPerNode = 0;           /* tasks per node */
 int      verbose = VERBOSE_0;        /* verbose output */
+int      rankTestComm = 0;           /* rank in testComm */
 MPI_Comm testComm;
 MPI_Comm mpi_comm_world;
 FILE * out_logfile;
@@ -694,7 +695,7 @@ void StoreStoneWallingIterations(char * const filename, int64_t count){
  * Sleep for 'delay' seconds.
  */
 void DelaySecs(int delay){
-  if (rank == 0 && delay > 0) {
+  if (rankOffset == 0 && delay > 0) {
     if (verbose >= VERBOSE_1)
             fprintf(out_logfile, "delaying %d seconds . . .\n", delay);
     sleep(delay);

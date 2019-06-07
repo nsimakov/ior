@@ -195,13 +195,13 @@ static void PrintArrayEnd(){
 }
 
 void PrintRepeatEnd(){
-  if (rank != 0)
+  if (rankTestComm != 0)
           return;
   PrintArrayEnd();
 }
 
 void PrintRepeatStart(){
-  if (rank != 0)
+  if (rankTestComm != 0)
           return;
   if( outputFormat == OUTPUT_DEFAULT){
     return;

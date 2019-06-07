@@ -23,6 +23,7 @@ extern int rank;
 extern int rankOffset;
 extern int tasksPerNode;
 extern int verbose;
+extern int rankTestComm;
 extern MPI_Comm testComm;
 extern MPI_Comm mpi_comm_world;
 extern FILE * out_logfile;
